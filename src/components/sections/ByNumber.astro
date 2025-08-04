@@ -1,5 +1,24 @@
 ---
 import Container from "../shared/Container.astro";
+
+const stats = [
+  {
+    value: import.meta.env.BYNUMBER_1_VALUE,
+    label: import.meta.env.BYNUMBER_1_LABEL,
+  },
+  {
+    value: import.meta.env.BYNUMBER_2_VALUE,
+    label: import.meta.env.BYNUMBER_2_LABEL,
+  },
+  {
+    value: import.meta.env.BYNUMBER_3_VALUE,
+    label: import.meta.env.BYNUMBER_3_LABEL,
+  },
+  {
+    value: import.meta.env.BYNUMBER_4_VALUE,
+    label: import.meta.env.BYNUMBER_4_LABEL,
+  },
+];
 ---
 
 <section class="relative mt-12 md:mt-16">
@@ -7,41 +26,14 @@ import Container from "../shared/Container.astro";
     <div
       class="mx-auto lg:mx-0 p-5 sm:p-6 py-6 sm:py-8 max-w-5xl rounded-3xl bg-box-bg border border-box-border shadow-lg  shadow-box-shadow md:divide-x divide-box-border grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-6 lg:gap-12"
     >
-      <div class="text-center">
-        <h2
-          class="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-1"
-        >
-          12+
-        </h2>
-        <p class="mt-2 text-heading-3">Created projects</p>
-      </div>
-
-      <div class="text-center">
-        <h2
-          class="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-1"
-        >
-          200+
-        </h2>
-        <p class="mt-2 text-heading-3">Projects</p>
-      </div>
-
-      <div class="text-center">
-        <h2
-          class="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-1"
-        >
-          120
-        </h2>
-        <p class="mt-2 text-heading-3">Happy Client</p>
-      </div>
-
-      <div class="text-center">
-        <h2
-          class="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-1"
-        >
-          5+
-        </h2>
-        <p class="mt-2 text-heading-3">Years</p>
-      </div>
+            {stats.map(stat => (
+        <div class="text-center">
+          <h2 class="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-1">
+            {stat.value}
+          </h2>
+          <p class="mt-2 text-heading-3">{stat.label}</p>
+        </div>
+      ))}
     </div>
   </Container>
 </section>
