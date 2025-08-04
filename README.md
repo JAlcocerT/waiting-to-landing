@@ -1,3 +1,11 @@
+Forked from:
+
+* https://github.com/unoforge/agency-landing-page-Astrojs
+* https://agencex-astro.vercel.app/#features
+
+
+---
+
 <h1>AgenceX Landing page</h1>
 
 A simple landing page for a digital agency
