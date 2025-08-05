@@ -62,15 +62,16 @@ clean:
 	docker compose -f docker-compose.yml rm -f
 	@echo "Cleanup completed"
 
-build-codex:	## Build Codex container only
-	@echo "Building Codex container specifically..."
-	docker compose -f docker-compose.codex.yml build
-	@echo "Codex container built successfully"
+python-setup:	## Set up Python environment via uv
+	@echo "Setting up Python environment..."
+	uv init && uv add questionary && uv add requests && uv add dotenv
+	@echo "Python environment set up successfully"
 
-run-codex-only:	## Run only the Codex container (codex-container) via codex compose file and keeps it running
-	@echo "Running only the Codex container from codex compose file..."
-	docker compose -f docker-compose.codex.yml up codex
+update-dns: ## Update Cloudflare DNS record via Python questionare script
+	@echo "Updating Cloudflare DNS record..."
+	@echo "Your current IP/s: $(shell hostname -I)"
+	uv run cloudflare-dns-updater.py
 
-codex-shell:	## Open an interactive shell in the codex container so that the scripts are run without local dependencies
-	@echo "Running Codex container...the scripts run_codex-init.sh and run_codex-followup.sh are available to run without any local dependencies"
-	docker exec -it codex-container bash
+check-dns: ## Check Cloudflare DNS record via nslookup
+	@echo "Checking DNS record..."
+	nslookup test.jalcocertech.com
