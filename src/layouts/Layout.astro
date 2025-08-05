@@ -25,7 +25,7 @@ const mode = import.meta.env.MODE;
     />
   </head>
   <body class="overflow-hidden overflow-y-auto bg-body">
-    <Navbar />
+    {mode === 'LANDING' && <Navbar />}
     <slot />
     {mode === 'LANDING' && <Footer />}
   </body>

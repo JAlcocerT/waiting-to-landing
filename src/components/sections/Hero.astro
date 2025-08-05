@@ -10,6 +10,7 @@ const titleSuffix = import.meta.env.HERO_TITLE_SUFFIX;
 const subtitle = import.meta.env.HERO_SUBTITLE;
 const formUrl = import.meta.env.FORM_URL;
 const formEmailFieldId = import.meta.env.FORM_EMAIL_FIELD_ID;
+const heroImage = import.meta.env.HERO_IMAGE_PATH || "/images/image1.webp";
 
 ---
 
@@ -56,7 +57,7 @@ const formEmailFieldId = import.meta.env.FORM_EMAIL_FIELD_ID;
         </div>
 
         <div class="flex flex-1 lg:w-1/2 lg:h-auto relative lg:max-w-none lg:mx-0 mx-auto max-w-3xl">
-            <img src="/images/image1.webp" alt="Hero image" width="2350" height="2359" class="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none max-h-96">
+            <img src={heroImage} alt="Hero image" width="2350" height="2359" class="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none max-h-96">
         </div>
     </Container>
 

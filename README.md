@@ -3,6 +3,10 @@ Forked from:
 * https://github.com/unoforge/agency-landing-page-Astrojs
 * https://agencex-astro.vercel.app/#features
 
+> MIT | A simple agency landing page made with astrojs and tailwindcss
+
+
+
 
 ---
 
