@@ -44,11 +44,11 @@ run-all:	## Build and Spin the 3 containers (Codex, Astro dev, Astro prod)
 
 run-dev:	## Run only the astro development server to see the docs generated in real time
 	@echo "Running Astro development server..."
-	docker compose -f docker-compose.yml up --build astro-dev codex
+	docker compose up astro-dev
 
 run-prod:	## Run only the astro production server with the generated docs and search capability
 	@echo "Running Astro production server..."
-	docker compose -f docker-compose.yml up --build astro-prod codex
+	docker compose up astro-prod
 
 # Show logs for running containers
 show-logs:

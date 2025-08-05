@@ -1,5 +1,9 @@
 # Waiting List x Landing Page
 
+Related Posts:
+
+* https://jalcocert.github.io/JAlcocerT/how-to-create-a-waiting-list/
+
 Adapt the MODE (waiting list or landing page) via the .env file
 
 ``sh
