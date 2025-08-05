@@ -1,4 +1,30 @@
-Forked from:
+# Waiting List x Landing Page
+
+Adapt the MODE (waiting list or landing page) via the .env file
+
+``sh
+cp .env.example .env
+```
+
+*Optionally*:
+
+* Configure formbricks form and questionaire
+* Configure Cloudflare DNS record via Python questionaire script
+* Get a domain from Porkbun via Python questionaire script
+
+See the website in action as per:
+
+```sh
+#make help
+make local-dev
+#make local-prod
+
+#make run-dev
+make run-prod
+```
+
+
+**Forked from:**
 
 * https://github.com/unoforge/agency-landing-page-Astrojs
 * https://agencex-astro.vercel.app/#features

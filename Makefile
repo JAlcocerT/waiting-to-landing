@@ -75,3 +75,7 @@ update-dns: ## Update Cloudflare DNS record via Python questionare script
 check-dns: ## Check Cloudflare DNS record via nslookup
 	@echo "Checking DNS record..."
 	nslookup test.jalcocertech.com
+
+porkbun-domain: ## Check/Buy domains via Porkbun API
+	@echo "Checking/Buying domain..."
+	uv run porkbun-domain.py
