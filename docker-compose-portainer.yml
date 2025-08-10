@@ -12,7 +12,7 @@ services:
     ports:
       - "4324:4321"  # Astro dev server with live changes port - Go to http://localhost:4324/
     volumes:
-      - ./:/app
+      - /home/jalcocert/waiting-to-landing:/app
     command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
     environment:
       - NODE_ENV=development
@@ -22,8 +22,8 @@ services:
       - HERO_TITLE_SUFFIX="is coming soon."
       - HERO_SUBTITLE="Don't waste it with the WRONT website."
       - HERO_IMAGE_PATH=/images/image1.webp
-      - BYNUMBER_1_VALUE="12+"
-      - BYNUMBER_1_LABEL="Created projects"
+      - BYNUMBER_1_VALUE="42% +"
+      - BYNUMBER_1_LABEL="Conversion Rate"
       - BYNUMBER_2_VALUE="200+"
       - BYNUMBER_2_LABEL="Projects"
       - BYNUMBER_3_VALUE="120"
@@ -34,28 +34,12 @@ services:
       - FORM_EMAIL_FIELD_ID="gqoiwzjon6gyunyqxqd9wrtq"
     networks:
       - project-network
-      #- cloudflared_tunnel
+      - cloudflared_tunnel
     tty: true
-    restart: "no"
-
-  astro-prod:
-    image: node:22.16-alpine3.22 #node:18-alpine #docker pull node:22.16-alpine3.22
-    container_name: astro-prod
-    working_dir: /app
-    volumes:
-      - ./:/app
-    ports:
-      - "8087:4321"  # Changed to match Astro's default port
-    command: >
-      sh -c "npm install && npm run build && npx http-server ./dist -p 4321"
-    environment:
-      - NODE_ENV=production
-    networks:
-      - project-network
     restart: "no"
 
 networks:
   project-network:
     name: project-waitingtolanding
-  # cloudflared_tunnel:
-  #   external: true
+  cloudflared_tunnel:
+    external: true
