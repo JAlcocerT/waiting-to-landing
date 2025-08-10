@@ -27,6 +27,11 @@ local-dev:
 	npm install && npm run dev -- --host 0.0.0.0
 	@echo "Astro development server running"
 
+local-waiting:
+	@echo "Running Astro development server on port 4321..."
+	npm install && npm run dev -- --host 0.0.0.0 --port 4321
+	@echo "Astro development server running on port 4321"
+
 local-prod:
 	@echo "Running Astro production server..."
 	npm install && npm run build && npm run start
@@ -44,6 +49,10 @@ run-all:	## Build and Spin the 3 containers (Codex, Astro dev, Astro prod)
 
 run-dev:	## Run only the astro development server to see the docs generated in real time
 	@echo "Running Astro development server..."
+	docker compose up astro-dev
+
+container-waiting: ## Spin up the Astro dev container (WAITING mode) via docker-compose.yml
+	@echo "Spinning up Astro dev container (WAITING mode)..."
 	docker compose up astro-dev
 
 run-prod:	## Run only the astro production server with the generated docs and search capability

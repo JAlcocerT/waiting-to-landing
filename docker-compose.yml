@@ -16,8 +16,25 @@ services:
     command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
     environment:
       - NODE_ENV=development
+      - MODE=WAITING
+      - HERO_TITLE_PREFIX="Time is valuable"
+      - HERO_TITLE_HIGHLIGHT="Great Stuff"
+      - HERO_TITLE_SUFFIX="is coming soon."
+      - HERO_SUBTITLE="Don't waste it with the WRONT website."
+      - HERO_IMAGE_PATH=/images/image1.webp
+      - BYNUMBER_1_VALUE="12+"
+      - BYNUMBER_1_LABEL="Created projects"
+      - BYNUMBER_2_VALUE="200+"
+      - BYNUMBER_2_LABEL="Projects"
+      - BYNUMBER_3_VALUE="120"
+      - BYNUMBER_3_LABEL="Happy Client"
+      - BYNUMBER_4_VALUE="5++"
+      - BYNUMBER_4_LABEL="Years"
+      - FORM_URL="https://app.formbricks.com/s/cmdxm7avj0zgjw001z2q5qtp0"
+      - FORM_EMAIL_FIELD_ID="gqoiwzjon6gyunyqxqd9wrtq"
     networks:
       - project-network
+      - cloudflared_tunnel
     tty: true
     restart: "no"
 
@@ -40,3 +57,5 @@ services:
 networks:
   project-network:
     name: project-waitingtolanding
+  cloudflared_tunnel:
+    external: true
