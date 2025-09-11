@@ -4,19 +4,19 @@ Related Posts:
 
 * https://jalcocert.github.io/JAlcocerT/how-to-create-a-waiting-list/
 
-Adapt the MODE (waiting list or landing page) via the .env file
+Adapt the MODE (waiting list or landing page) via the `.env` file: **Waiting list** or **landing page**
 
-``sh
+```sh
 cp .env.example .env
 ```
 
 *Optionally*:
 
-* Configure formbricks form and questionaire
-* Configure Cloudflare DNS record via Python questionaire script
-* Get a domain from Porkbun via Python questionaire script
+* Configure [formbricks](https://formbricks.com/) form and questionaire
+* Configure [Cloudflare](https://cloudflare.com/) DNS record via Python questionaire script `cloudflare-dns-updater.py`
+* Get a domain from [Porkbun](https://porkbun.com/) via Python questionaire script `porkbun-domains.py`
 
-See the website in action as per:
+See the website in action as per these makefile commands: *they spin up a local server and a production server*
 
 ```sh
 #make help
