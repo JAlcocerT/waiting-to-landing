@@ -1,5 +1,3 @@
-#version: '3'
-
 services:
   # Run one of these two Astro services at a time by specifying it directly with the command
   # e.g., docker-compose up codex astro-dev

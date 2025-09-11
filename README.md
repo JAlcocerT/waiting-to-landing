@@ -1,5 +1,7 @@
 # Waiting List x Landing Page
 
+Switch quickly from a waiting list that feeds data to formbricks to a landing page.
+
 Related Posts:
 
 * https://jalcocert.github.io/JAlcocerT/how-to-create-a-waiting-list/
@@ -27,16 +29,12 @@ make local-dev
 make run-prod
 ```
 
-
 **Forked from:**
 
 * https://github.com/unoforge/agency-landing-page-Astrojs
 * https://agencex-astro.vercel.app/#features
 
 > MIT | A simple agency landing page made with astrojs and tailwindcss
-
-
-
 
 ---
 
