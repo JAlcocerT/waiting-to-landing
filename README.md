@@ -10,6 +10,7 @@ Adapt the MODE (waiting list or landing page) via the `.env` file: **Waiting lis
 
 ```sh
 cp .env.example .env
+#python3 porkbun-nameserver-manager.py 
 ```
 
 *Optionally*:
